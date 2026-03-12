@@ -1,7 +1,8 @@
-console.log("the page can read this")
 document.addEventListener('DOMContentLoaded', function () {
+	
 	const menu = document.getElementById('menu');
 	const menuBtn = document.getElementById('menu-btn');
+	const contactForm = document.getElementById('contact-form');
 	const backToTop = document.getElementById('back-to-top');
 	
 
@@ -17,15 +18,15 @@ document.addEventListener('DOMContentLoaded', function () {
 	menuBtn.addEventListener('click', toggleMenu);
 
 
-	document.getElementById('contact-form').addEventListener('submit', function (event) {
+	contactForm.addEventListener('submit', function (event) {
 		event.preventDefault();
 		alert('Form submitted!');
 	});
 
 	window.onscroll = function () {
-	if (window.scrollY > 500) {
+		if (window.scrollY > 500) {
 			backToTop.classList.add("display");
-		} else if(window.scrollY < 500) {
+		} else {
 			backToTop.classList.remove('display');
 		}
 	};
