@@ -5,10 +5,9 @@
 	--orange-rgb: 247, 146, 51;
 	--white-hex: #fff;
 	--white-rgb: 255, 255, 255;
-}
-html{
 	scroll-behavior: smooth;
 }
+
 body {
 	background: var(--white-hex);
 	color: var(--dark-gray-hex);
@@ -48,8 +47,8 @@ header {
 
 .navigation {
 	flex-grow: 1;
-	color: white;
-	background-color:#f79233;
+	color: var(--white-hex);
+	background-color: var(--orange-hex);
 	margin-left: auto;
 	opacity: 0;
 	pointer-events: none;
@@ -96,14 +95,14 @@ header {
 	padding: 1em 1.5em;
 	border: 1px solid;
 	border-radius: 3em;
-	background-color:white;
+	background-color: var(--white-hex);
 	color: currentcolor;
 	text-decoration: none;
 
 	&:hover,
 	&:focus {
-		background-color: orange;
-		color: white;
+		background-color: var(--orange-hex);
+		color: var(--white-hex);
 	}
 }
 
@@ -265,6 +264,6 @@ form {
     border-radius: 3em;
     text-decoration: none;
     width: 100%;
-    background-color: rgba(50, 56, 72, 0.05);
+    background-color: rgba(50, 56, 72, 0.05); 
 }
 
