@@ -19,18 +19,35 @@ header {
 	display: flex;
 	gap: 2em;
 	justify-content: space-between;
+	align-items: center;
 	padding: 20px;
 	border-radius: 0.5em;
-	background-color: orange;
+	background-color: var(--orange-hex);
 	box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.25);
 }
 
+#menu {
+	padding: 0.625em;
+	border-radius: 8px;
+}
+
 .menu-btn {
+	width: 50px;
+	height: 50px;
+	background-color: var(--white-hex);
+	border: none;
+	border-radius: 50%;
+	background-image: url(assets/bars.svg);
+	background-repeat: no-repeat;
+	background-size: 40%;
+	background-position: center;
 	order: 1;
 }
 
 .navigation {
 	flex-grow: 1;
+	color: white;
+	background-color:#f79233;
 	margin-left: auto;
 	opacity: 0;
 	pointer-events: none;
@@ -51,27 +68,33 @@ header {
 		pointer-events: auto;
 
 		@media screen and (max-width: 950px) {
-			transform: translate(0, 0);
+			transform: translate(0, 10px);
 		}
 	}
 }
 
 .navigation-list {
 	display: flex;
-	gap: 1em;
-	justify-content: flex-end;
-	align-items: center;
-
+    gap: 2.125em;
+    justify-content: flex-end;
+    align-items: center;
+    text-decoration: none;
 	@media screen and (max-width: 950px) {
 		flex-direction: column;
+		padding: 0;
 	}
 }
 
+.nav-list-link{
+	text-decoration: none;
+	color: white;
+}
 .btn {
 	display: inline-block;
 	padding: 1em 1.5em;
 	border: 1px solid;
 	border-radius: 3em;
+	background-color:white;
 	color: currentcolor;
 	text-decoration: none;
 
@@ -79,6 +102,24 @@ header {
 	&:focus {
 		background-color: orange;
 		color: white;
+	}
+}
+
+.back-to-top-btn{
+	position: absolute;
+  	top: -25px;  
+  	right: 20px;
+	width: 50px;
+	height: 50px;
+	background-color: var(--orange-hex);
+	background-image: url(assets/arrow-up.svg);
+	background-repeat: no-repeat;
+	background-size: 30%;
+	background-position: center;
+	border-radius: 100%;
+	display: none;
+	&.display{
+		display: block;
 	}
 }
 
@@ -93,15 +134,40 @@ header {
 	& + .btn-wrapper {
 		margin-top: 1rem;
 	}
+	
 }
 
+.centered {
+	@media screen and (min-width: 950px) {
+	max-width: 600px;  
+	margin: 0 auto;       
+	text-align: center;     
+	line-height: 1.5; 
+	}
+}
+
+.left-aligned{
+	@media screen and (min-width: 950px) {
+	text-align: left;
+	line-height: 1.5;
+	margin: 0;
+	max-width: 630px;
+	letter-spacing: 0.5px;      
+	}           
+}
+		
 .section-title {
 	margin-block: 0;
 	font-weight: 700;
 	font-size: 3.75em;
 
+	@media screen and (max-width: 950px) {
+		font-size: 1.5em;
+	}
+
 	& + .content-container {
 		margin-top: 1rem;
+		margin-bottom: 1rem;
 	}
 }
 
@@ -116,30 +182,32 @@ header {
 }
 
 button {
-	padding: 10px;
-	font-size: 18px;
+	padding: 0.625em;
 	cursor: pointer;
 }
 
 img {
 	width: 100%;
 	height: auto;
+	
+}
+.img-rounded{
+ border-radius: 24px;
 }
 
 ul {
 	list-style: none;
 }
 
-#menu {
-	padding: 10px;
-}
 
 footer {
+	position: relative;
+	background-color: var(--dark-gray-hex);
 	padding: 20px;
-	border-radius: 0.5em;
-	background: #222;
-	color: #333;
 	text-align: center;
+	border-radius: 0.5em;
+	color: var(--white-hex);
+	  
 }
 
 section {
@@ -147,16 +215,15 @@ section {
 }
 
 .width-container {
-	max-width: 1400px;
-	margin: 0 auto;
 	padding-inline: 3em;
-
+	text-align: center;
 	@media screen and (max-width: 1000px) {
 		padding-inline: 2em;
 	}
-
-	@media screen and (max-width: 700px) {
+	
+	@media screen and (max-width: 950px) {
 		padding-inline: 1em;
+		text-align: left;
 	}
 }
 
@@ -166,17 +233,36 @@ section {
 		grid-template-columns: 1fr 1fr;
 		gap: 2em 4em;
 		align-items: center;
-
+		text-align: start;
+		
 		@media screen and (max-width: 950px) {
 			grid-template-columns: 1fr;
+			text-align: left;
+			align-items: left;
 		}
+		
 	}
 }
 
-#contact-form {
+form {
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: 1em;
 	max-width: 500px;
 	margin: 0 auto;
+    justify-items: center;
+		@media screen and (max-width: 950px) {
+			margin: 0;
+			justify-items: start;
+		}
 }
+.form-input{
+    padding: 1em 1.5em;
+	box-sizing: border-box;
+    border: 1px solid;
+    border-radius: 3em;
+    text-decoration: none;
+    width: 100%;
+    background-color: rgba(50, 56, 72, 0.05);
+}
+

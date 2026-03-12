@@ -1,25 +1,33 @@
+console.log("the page can read this")
 document.addEventListener('DOMContentLoaded', function () {
 	const menu = document.getElementById('menu');
 	const menuBtn = document.getElementById('menu-btn');
+	const backToTop = document.getElementById('back-to-top');
+	
 
 	function toggleMenu() {
-		if (menu.style.display === "none") {
-			menu.style.display = "block";
-		} else {
-			menu.style.display = "none";
+			menu.classList.toggle("visible");
+			 if (menu.classList.contains("visible")) {
+				menuBtn.style.backgroundImage = 'url("assets/xmark.svg")';
+			} else {
+				menuBtn.style.backgroundImage = 'url("assets/bars.svg")';
+			}
 		}
-	}
+	
+	menuBtn.addEventListener('click', toggleMenu);
 
-	menu.addEventListener('click', toggleMenu);
-});
 
-document.getElementById('contact-form').addEventListener('submit', function (event) {
-	event.preventDefault();
-	alert('Form submitted!');
-});
+	document.getElementById('contact-form').addEventListener('submit', function (event) {
+		event.preventDefault();
+		alert('Form submitted!');
+	});
 
-window.onscroll = function () {
+	window.onscroll = function () {
 	if (window.scrollY > 500) {
-		document.getElementById('back-to-top').style.display = "block";
-	}
-};
+			backToTop.classList.add("display");
+		} else if(window.scrollY < 500) {
+			backToTop.classList.remove('display');
+		}
+	};
+
+});
