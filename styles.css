@@ -6,7 +6,9 @@
 	--white-hex: #fff;
 	--white-rgb: 255, 255, 255;
 }
-
+html{
+	scroll-behavior: smooth;
+}
 body {
 	background: var(--white-hex);
 	color: var(--dark-gray-hex);

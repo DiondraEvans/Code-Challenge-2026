@@ -14,3 +14,4 @@ Our totally real client reached out saying their site is not working in a few di
 	- scrolling is a bit jumpy and sluggish
 
 Just from glancing at the code, I can see quite a few standards issues along with accessibility issues. The CSS could also be implemented more efficiently with less specificity by utilizing classes along with being more consistent.
+
